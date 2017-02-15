@@ -1009,7 +1009,7 @@
 
         drawFooter: function() {
             var opts = this._o;
-            return '<div>' + opts.footer + '</div>';
+            return '<div class="pika-footer">' + opts.footer + '</div>';
         },
 
         adjustPosition: function()
