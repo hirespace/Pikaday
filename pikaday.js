@@ -975,8 +975,16 @@
 
             randId = 'pika-title-' + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 2);
 
+            html += '<div class="pika-container">';
+
             for (var c = 0; c < opts.numberOfMonths; c++) {
                 html += '<div class="pika-lendar">' + renderTitle(this, c, this.calendars[c].year, this.calendars[c].month, this.calendars[0].year, randId) + this.render(this.calendars[c].year, this.calendars[c].month, randId) + '</div>';
+            }
+
+            html += '</div>';
+
+            if (opts.footer) {
+                html += this.drawFooter();
             }
 
             this.el.innerHTML = html;
@@ -997,6 +1005,11 @@
                 // let the screen reader user know to use arrow keys
                 opts.field.setAttribute('aria-label', 'Use the arrow keys to pick a date');
             }
+        },
+
+        drawFooter: function() {
+            var opts = this._o;
+            return '<div>' + opts.footer + '</div>';
         },
 
         adjustPosition: function()
