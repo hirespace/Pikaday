@@ -545,7 +545,11 @@
 
         self._onInputClick = function()
         {
-            self.show();
+            if (self.isVisible()) {
+                self.hide();
+            } else {
+                self.show();
+            }
         };
 
         self._onInputBlur = function()
