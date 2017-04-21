@@ -540,7 +540,7 @@
 
         self._onInputFocus = function()
         {
-            self.show();
+            //self.show();
         };
 
         self._onInputClick = function()
@@ -553,7 +553,7 @@
             // IE allows pika div to gain focus; catch blur the input field
             var pEl = document.activeElement;
             do {
-                if (hasClass(pEl, 'pika-single')) {
+                if (hasClass(pEl, 'pika-single') || hasClass(pEl, 'pika-trigger')) {
                     return;
                 }
             }
